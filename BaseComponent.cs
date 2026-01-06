@@ -2,6 +2,9 @@
 
 abstract class BaseComponent
 {
+	int _hookIndex = 0;
+	private List<HookData> _hooks = new();
+
 	protected abstract void Render();
 
 	protected void UseEffect(Action effect, List<object> dependencies)
@@ -15,6 +18,12 @@ abstract class BaseComponent
 		return (initialValue, default);
 	}
 
+
+	private void ForceRender()
+	{
+		_hookIndex = 0;
+		Render();
+	}
 
 	//protected void UseMemo()
 	//{
