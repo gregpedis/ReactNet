@@ -29,8 +29,8 @@ internal class MyComponent : BaseComponent
 					if (amIDrunk)
 					{
 						SoberUpAndStopDonatingToTrump();
+						setAmIDrunk(false);
 					}
-					setAmIDrunk(false);
 				}
 			},
 			[money, amIDrunk]);
